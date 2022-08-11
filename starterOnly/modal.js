@@ -116,7 +116,7 @@ function validation(event){
       problems
     );
   } else {
-    // document.getElementById("errConditionsUtilisation").innerHTML = "";
+    
   }
 
   //  Validation of the form if everything is ok
