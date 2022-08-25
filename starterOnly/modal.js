@@ -12,12 +12,11 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const btnCloseModal = document.getElementById("close");
-
-
-
+const btnCloseModal2 = document.getElementById("closeVerif");
+const modalbg2 = document.querySelector(".modalValideReserve");
 
 //  validation form
-function validation(event){
+function validation(event) {
   event.preventDefault();
 
   //  DOM elements form
@@ -30,7 +29,8 @@ function validation(event){
   var cities = document.querySelectorAll('input[type="radio"]');
   var acceptedConditionsUtilisation = document.forms["reserve"]["checkbox1"];
   var today = new Date();
-  const email_regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const email_regex =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   //  Validation firstname
   if (first.value.trim().length < 2) {
@@ -74,7 +74,7 @@ function validation(event){
       problems
     );
     birthdate.style.borderColor = "red";
-  } 
+  }
 
   //  Validation nb participation
   if (
@@ -95,7 +95,8 @@ function validation(event){
   var checkCity = false;
   while (i < cities.length) {
     if (cities[i].checked) {
-      checkCity = true;break;
+      checkCity = true;
+      break;
     } else {
       i++;
     }
@@ -116,14 +117,14 @@ function validation(event){
       problems
     );
   } else {
-    
+    document.getElementById("errConditionsUtilisation").innerHTML = "";
   }
 
   //  Validation of the form if everything is ok
   if (problems === 0) {
     document.forms["reserve"].reset();
     document.querySelector(".modalValideReserve").style.display = "block";
-    document.querySelector(".modalValideReserve").style.display = "none";
+    document.querySelector(".bground").style.display = "none";
   }
 }
 
@@ -132,6 +133,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // close modal event
 btnCloseModal.addEventListener("click", closeModal);
+btnCloseModal2.addEventListener("click", closeModal);
 
 // launch modal form
 function launchModal() {
@@ -140,6 +142,7 @@ function launchModal() {
 // close modal form
 function closeModal() {
   modalbg.style.display = "none";
+  modalbg2.style.display = "none";
 }
 
 // return error message __ count and declare error
