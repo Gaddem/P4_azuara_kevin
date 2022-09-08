@@ -21,6 +21,7 @@ function validation(event) {
 
   //  DOM elements form
   var problems = 0;
+
   var first = document.forms["reserve"]["first"];
   var last = document.forms["reserve"]["last"];
   var email = document.forms["reserve"]["email"];
@@ -28,9 +29,9 @@ function validation(event) {
   var quantity = document.forms["reserve"]["quantity"];
   var cities = document.querySelectorAll('input[type="radio"]');
   var acceptedConditionsUtilisation = document.forms["reserve"]["checkbox1"];
+
   var today = new Date();
-  const email_regex =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const email_regex =/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   //  Validation firstname
   if (first.value.trim().length < 2) {
