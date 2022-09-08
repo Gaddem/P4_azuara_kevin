@@ -60,6 +60,9 @@ function validation(event) {
       problems
     );
     email.style.borderColor = "red";
+  }else{
+    document.getElementById("errEmail").innerHTML = "";
+
   }
 
   //  Validation birthday
