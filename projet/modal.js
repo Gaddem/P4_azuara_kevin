@@ -13,6 +13,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const btnCloseModal = document.getElementById("close");
 const btnCloseModal2 = document.getElementById("closeVerif");
+const btnCrossModal2 = document.getElementById("closeVerif2");
 const modalbg2 = document.querySelector(".modalValideReserve");
 
 //  validation form
@@ -41,6 +42,9 @@ function validation(event) {
       problems
     );
     first.style.borderColor = "red";
+  }else{
+    console.log(first.value.trim().length);
+    document.getElementById("errFirst").innerHTML = "";
   }
 
   //  Validation lastname
@@ -51,6 +55,8 @@ function validation(event) {
       problems
     );
     last.style.borderColor = "red";
+  }else{
+    document.getElementById("errLast").innerHTML = "";
   }
 
   //  Validation email
@@ -78,6 +84,8 @@ function validation(event) {
       problems
     );
     birthdate.style.borderColor = "red";
+  }else{
+    document.getElementById("errBirthday").innerHTML = "";
   }
 
   //  Validation nb participation
@@ -92,6 +100,8 @@ function validation(event) {
       problems
     );
     quantity.style.borderColor = "red";
+  }else{
+    document.getElementById("errQuantity").innerHTML = "";
   }
 
   //  Validation cities
@@ -111,6 +121,8 @@ function validation(event) {
       "<br>Vous devez choisir une option.",
       problems
     );
+  }else{
+    document.getElementById("errCities").innerHTML = "";
   }
 
   //  Validation of the privacy policy
@@ -138,6 +150,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // close modal event
 btnCloseModal.addEventListener("click", closeModal);
 btnCloseModal2.addEventListener("click", closeModal);
+btnCrossModal2.addEventListener("click", closeModal);
 
 // launch modal form
 function launchModal() {

@@ -148,6 +148,34 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 800px;
+}
+
+.successMessage{
+  font-weight: 300;
+  font-size: 36px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonClose{
+  position: absolute;
+  background: #fe142f;
+  margin-top: 20px;
+  color: #fff;
+  bottom: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none; 
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 15px;
 }
 
 .footer {
@@ -467,7 +495,7 @@ input[data-error]::after {
   white-space: nowrap;
 }
 .hero-text {
-  width: 146%;
+  max-width: 90%;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
